@@ -1,10 +1,12 @@
 package ru.netology;
 
-public class StatstService{
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@org.junit.jupiter.api.Test
+public class StatstServiceTest {
+
+    @org.junit.jupiter.api.Test 
     void findSales() {
-        StatstService service = new StatstService();
+        ru.netolgy.StatstService service = new ru.netolgy.StatstService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 180;
 
@@ -14,13 +16,13 @@ public class StatstService{
 
     }
 
-    {
+
 
 
 
     @org.junit.jupiter.api.Test
     void findMiddle() {
-        StatstService service = new StatstService();
+        ru.netolgy.StatstService service = new ru.netolgy.StatstService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
 
@@ -33,7 +35,8 @@ public class StatstService{
 
     @org.junit.jupiter.api.Test
     void findBiggest() {
-        StatstService service = new StatstService();
+
+        ru.netolgy.StatstService service = new ru.netolgy.StatstService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected1 = 5;
         int expected2 = 7;
@@ -48,7 +51,7 @@ public class StatstService{
 
     @org.junit.jupiter.api.Test
     void findSmallest() {
-        StatstService service = new StatstService();
+        ru.netolgy.StatstService service = new ru.netolgy.StatstService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 8;
 
@@ -61,7 +64,7 @@ public class StatstService{
 
     @org.junit.jupiter.api.Test
     void findLessThanMiddle() {
-        StatstService service = new StatstService();
+        ru.netolgy.StatstService service = new ru.netolgy.StatstService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 9;
 
@@ -74,7 +77,7 @@ public class StatstService{
 
     @org.junit.jupiter.api.Test
     void findMoreThanMiddle() {
-        StatstService service = new StatstService();
+        ru.netolgy.StatstService service = new ru.netolgy.StatstService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 3;
 
