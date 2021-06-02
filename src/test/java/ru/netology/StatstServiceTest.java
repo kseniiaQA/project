@@ -1,10 +1,14 @@
 package ru.netology;
 
+import org.junit.jupiter.api.Test;
+import ru.netolgy.StatstService;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StatstServiceTest {
 
-    @org.junit.jupiter.api.Test 
+
+    @org.junit.jupiter.api.Test
     void findSales() {
         ru.netolgy.StatstService service = new ru.netolgy.StatstService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -17,18 +21,15 @@ public class StatstServiceTest {
     }
 
 
-
-
-
     @org.junit.jupiter.api.Test
     void findMiddle() {
         ru.netolgy.StatstService service = new ru.netolgy.StatstService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
 
-        int actual = service.findSales(sales);
-
+        int actual = service.findMiddle(sales);
         assertEquals(expected, actual);
+
 
     }
 
@@ -38,11 +39,11 @@ public class StatstServiceTest {
 
         ru.netolgy.StatstService service = new ru.netolgy.StatstService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected1 = 5;
-        int expected2 = 7;
+        int expected1 = 6;
+        int expected2 = 8;
 
 
-        int actual = service.findSales(sales);
+        int actual = service.findBiggest(sales);
 
         assertEquals(expected1, expected2, actual);
 
@@ -53,39 +54,43 @@ public class StatstServiceTest {
     void findSmallest() {
         ru.netolgy.StatstService service = new ru.netolgy.StatstService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 8;
-
-        int actual = service.findSales(sales);
-
-        assertEquals(expected, actual);
-
-    }
-
-
-    @org.junit.jupiter.api.Test
-    void findLessThanMiddle() {
-        ru.netolgy.StatstService service = new ru.netolgy.StatstService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 9;
-
-        int actual = service.findSales(sales);
-
+        int actual = service.findSmallest(sales);
         assertEquals(expected, actual);
+
 
     }
 
 
-    @org.junit.jupiter.api.Test
-    void findMoreThanMiddle() {
-        ru.netolgy.StatstService service = new ru.netolgy.StatstService();
+    @Test
+    void findLessThanMiddle() {
+        StatstService service = new StatstService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 3;
+        int expected = 5;
 
-        int actual = service.findSales(sales);
+int middle=15;
 
+        int actual = service.findLessThanMiddle(sales, middle);
         assertEquals(expected, actual);
+
+
+    }
+
+    @Test
+    void findMoreThanMiddle() {
+        StatstService service = new StatstService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 5;
+
+
+        int middle=15;
+        int actual = service.findMoreThanMiddle(sales, middle);
+        assertEquals(expected, actual);
+
+
     }
 }
+
 
 
 

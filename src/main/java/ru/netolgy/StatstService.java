@@ -14,62 +14,68 @@ public class StatstService {
 
 
     public int findMiddle(int[] sales) {
+        int sum = 0;
+        int middle = 0;
+        for (int sale : sales) {
+            sum += sale;
 
-        int sum = 180;
-        int monthAmount = 12;
-        int middleSum = sum / monthAmount;
+        }
+        middle = sum / sales.length;
 
-        return middleSum;
+
+        return middle;
 
     }
 
     public int findBiggest(int[] sales) {
 
-        int sum = sales[0];
+        int bigsum = sales[0];
+
         for (int sale : sales) {
-            if (sum < sale) {
-                sum = sale;
+            if (bigsum < sale) {
+                bigsum = sale;
             }
         }
-        return sum;
+        return bigsum+2;
     }
 
     public int findSmallest(int[] sales) {
+        int minsum = sales[0];
 
-        int sum = sales[0];
         for (int sale : sales) {
-            if (sum > sale) {
-                sum = sale;
+            if (minsum > sale) {
+                minsum = sale;
             }
         }
-        return sum;
+        return minsum+2;
     }
 
-    public int findLessThanMiddle(int[] sales) {
-        int middleSum = 15;
-        int LessThanMiddleSum = 0;
 
+    public int findLessThanMiddle(int[] sales, int middle) {
+        int monthAmount = 0;
         for (int sale : sales) {
-            if (sale < sales[middleSum]) {
-                LessThanMiddleSum = middleSum;
+
+            if (sale < middle)
+
+monthAmount = monthAmount+1;
+
             }
-            return LessThanMiddleSum;
+
+            return monthAmount;
         }
 
 
-        int findMoreThanMiddle;
-        middleSum = 15;
-        int moreThanMiddleSum = 0;
 
 
+    public int findMoreThanMiddle(int[] sales, int middle) {
+        int monthAmount = 0;
         for (int sale : sales) {
-            if (sale < sales[middleSum]) {
-                moreThanMiddleSum = middleSum;
+
+            if (sale < middle)
+                monthAmount = monthAmount + 1;
             }
-            return moreThanMiddleSum;
+
+            return monthAmount;
         }
-        return middleSum;
-    }
+
 }
-
-
